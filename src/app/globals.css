@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+html {
+  @apply h-full;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    height: 100%;
+    @apply h-full text-gray-900 bg-gray-100 dark:text-gray-300 dark:bg-gray-900;
+}
+
+a {
+    @apply text-blue-500 underline;
+}
+
+#tesla-cgc {
+  min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+}
+
+section {
+    @apply border border-gray-300 font-roboto dark:bg-gray-800 dark:border-gray-900;
+}
+
+#sidebar {
+  @apply font-roboto;
+}
+
+hr {
+    @apply border-b border-gray-300 shadow-md dark:border-gray-600;
+}
+
+h1 {
+    @apply text-2xl font-bold;
+}
+
+h2 {
+    @apply text-xl font-bold;
+}
+
+label {
+  @apply font-bold;
+}
