@@ -1,6 +1,6 @@
 # Tesla Clean Grid Charging
 
-As of November 27, 2023, Tesla has started disabling the core API endpoints crucial for the functionality of this app. Specifially, vehicle location information (impacting geofencing of the charge management functionality) and commands to pause and enable charging. The intended replacement is Tesla's new Fleet API; however, this is a paid service and currently beyond the scope of this project. Unfortunately, this means an end to this project (for now), but it was a great learning experience. 
+As of November 27, 2023, Tesla has started disabling the core API endpoints crucial for the functionality of this app. Specifially, vehicle location information (impacting geofencing of the charge management functionality) and commands to pause and enable charging. The intended replacement is Tesla's new Fleet API; however, this is a paid service and not a viable option for this project's intended audience. Unfortunately, this means it's time to move on (for now), but it was a great learning experience. 
 
 ![Screenshot of the application](https://github.com/jbelew/tesla-clean-grid-charging/blob/master/public/screenshot.png?raw=true)
 
