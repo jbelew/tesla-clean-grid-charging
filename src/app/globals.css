@@ -31,7 +31,7 @@ body {
     )
     rgb(var(--background-start-rgb));
     height: 100%;
-    @apply h-full text-gray-900 bg-gray-100 dark:text-gray-300 dark:bg-gray-900;
+    @apply h-full text-gray-900 bg-gray-300 dark:text-gray-300 dark:bg-gray-900;
 }
 
 a {
@@ -43,7 +43,7 @@ a {
 }
 
 section {
-    @apply border border-gray-300 font-roboto dark:bg-gray-800 dark:border-gray-900;
+    @apply bg-gray-100 border border-gray-300 font-roboto dark:bg-gray-800 dark:border-gray-900;
 }
 
 #sidebar {
@@ -51,7 +51,11 @@ section {
 }
 
 hr {
-    @apply border-b border-gray-300 shadow-md dark:border-gray-600;
+    @apply border-b border-gray-400 shadow-md dark:border-gray-600;
+}
+
+section hr {
+  @apply border-b border-gray-300 shadow-md dark:border-gray-600;
 }
 
 h1 {

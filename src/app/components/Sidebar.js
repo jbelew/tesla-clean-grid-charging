@@ -7,7 +7,7 @@ import { settingsSubject, updateSettings } from "../utils/SettingsService";
 import { vehiclesSubject, vehicleDetailsSubject, triggerFetchVehicles, triggerFetchVehicleDetails, apiService } from "../utils/ApiService";
 
 import { wakeVehicleUntilOnline } from "../utils/VehicleCommands.js";
-import { isWithinOneMile } from "../utils/GeofenceUtils.js.js";
+import { isWithinOneMile } from "../utils/GeofenceUtils.js";
 import MapsEmbed from "./MapsEmbed";
 
 /**
@@ -153,7 +153,7 @@ function RenderVehicles() {
 
                                     <>
                                         <p className="text-sm">
-                                            <strong>Battery:</strong> {appSettings.last_seen.battery_level}%
+                                            <strong>Battery:</strong> {appSettings?.last_seen?.battery_level}%
                                         </p>
                                         <p className="text-sm">
                                             <strong>Location:</strong> {isVehicleHome(appSettings) ? "At Home" : "Roaming"}

@@ -9,7 +9,6 @@ import RenderDetails from "./components/BatterySection";
 import RenderElectricityMaps from "./components/EnergySection";
 import RenderTokenOverlay from "./components/TeslaTokenOverlay";
 
-
 export default function Home() {
 
     initializeApiService();

@@ -164,7 +164,7 @@ const RenderElectricityMaps = () => {
         const historySubscription = energyHistorySubject.subscribe(
             async (data) => {
                 try {
-                    console.log("Received energy history data in template:", data);
+                    // console.log("Received energy history data in template:", data);
 
                     // Check if there's an error in the data
                     if (data.error) {
@@ -216,7 +216,7 @@ const RenderElectricityMaps = () => {
         const consumptionSubscription = energyCurrentSubject.subscribe(
             async (data) => {
                 try {
-                    console.log("Received energy consumption data in template:", data);
+                    // console.log("Received energy consumption data in template:", data);
 
                     // Check if there's an error in the data
                     if (data.error) {

@@ -22,15 +22,16 @@ export async function GET(request) {
 
 	const url = new URL(request.url);
 	const id = url.searchParams.get("id");
+	const command = url.searchParams.get("command");
 
 	// Check if the 'id' parameter is present
 	if (!id) {
 		return NextResponse.json({ error: 'Missing required parameter: id' }, { status: 400 });
 	}
-
 	// Use the 'id' parameter in your API request
 	try {
-		const vehicleData = await api.wakeUp(id);
+		console.log(id,command);
+		const vehicleData = await api.command(command,id);
 		return NextResponse.json(vehicleData, { status: 200 });
 	} catch (error) {
 		return NextResponse.json({ error: 'Failed to get vehicle data' }, { status: 500 });

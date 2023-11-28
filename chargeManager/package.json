@@ -1,0 +1,15 @@
+{
+  "name": "chargemanager",
+  "version": "1.0.0",
+  "description": "Charge Management background process for the Tesla Clean Grid Charging App.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "John Belew",
+  "license": "MIT",
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.7.0"
+  }
+}

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { settingsSubject, updateSettings } from "../utils/SettingsService";
 import { vehiclesSubject, vehicleDetailsSubject } from "../utils/ApiService";
-import { isWithinOneMile } from "../utils/GeofenceUtils.js.js";
+import { isWithinOneMile } from "../utils/GeofenceUtils.js";
 
 import ChargingGraph from "./ChargingGraph";
 import "./Shimmer.css"; // External CSS file
@@ -43,30 +43,52 @@ const RenderDetails = () => {
         return reserveRangeMiles;
     }
 
-    function isVehicleIsHome() {
-        const currentLatitude = vehicleDetails.drive_state?.active_route_latitude;
-        const currentLongitude = vehicleDetails.drive_state?.active_route_longitude;
-        const homeLatitude = appSettings.home_latitude; // 37.7749; // Replace with your target latitude
-        const homeLongitude = appSettings.home_longitude; // -122.4194; // Replace with your target longitude
+    function isVehicleHome(data) {
+        let currentLatitude = 0;
+        let currentLongitude = 0;
+
+        if (vehiclesData.state === "online") {
+            currentLatitude = vehicleDetails.drive_state.active_route_latitude;
+            currentLongitude = vehicleDetails.drive_state.active_route_longitude;
+        } else {
+            currentLatitude = data.last_seen.latitude;
+            currentLongitude = data.last_seen.longitude;
+        }
+        const homeLatitude = data.home_latitude;
+        const homeLongitude = data.home_longitude;
         return isWithinOneMile(currentLatitude, currentLongitude, homeLatitude, homeLongitude);
     }
 
     const handleSaveSettings = async () => {
         let newSettings;
         if (vehicleDetails && typeof vehicleDetails === "object" && Object.keys(vehicleDetails).length > 0) {
-            newSettings = {
-                ...appSettings,
-                charge_management: isChargeManagementEnabled,
-                battery_reserve: Number(sliderValue),
-                last_seen: {
-                    battery_level: vehicleDetails?.charge_state?.battery_level,
-                    estimated_range: vehicleDetails?.charge_state?.battery_range,
-                    charge_limit_soc: vehicleDetails?.charge_state?.charge_limit_soc,
-                    latitude: vehicleDetails?.drive_state?.active_route_latitude,
-                    longitude: vehicleDetails?.drive_state?.active_route_longitude,
-                    timestamp: Date.now(),
-                },
-            };
+            if (vehicleDetails?.drive_state?.active_route_latitude !== undefined && vehicleDetails?.drive_state?.active_route_longitude !== undefined) {
+                newSettings = {
+                    ...appSettings,
+                    charge_management: isChargeManagementEnabled,
+                    battery_reserve: Number(sliderValue),
+                    last_seen: {
+                        battery_level: vehicleDetails?.charge_state?.battery_level,
+                        estimated_range: vehicleDetails?.charge_state?.battery_range,
+                        charge_limit_soc: vehicleDetails?.charge_state?.charge_limit_soc,
+                        // latitude: vehicleDetails?.drive_state?.active_route_latitude,
+                        // longitude: vehicleDetails?.drive_state?.active_route_longitude,
+                        timestamp: Date.now(),
+                    },
+                };
+            } else {
+                newSettings = {
+                    ...appSettings,
+                    charge_management: isChargeManagementEnabled,
+                    battery_reserve: Number(sliderValue),
+                    last_seen: {
+                        battery_level: vehicleDetails?.charge_state?.battery_level,
+                        estimated_range: vehicleDetails?.charge_state?.battery_range,
+                        charge_limit_soc: vehicleDetails?.charge_state?.charge_limit_soc,
+                        timestamp: Date.now(),
+                    },
+                };
+            }
         } else {
             newSettings = {
                 ...appSettings,
@@ -120,7 +142,7 @@ const RenderDetails = () => {
     useEffect(() => {
         const vehicleDetailsSubscription = vehicleDetailsSubject.subscribe(
             (vehicleDetails) => {
-                // console.log("New vehicleDetails received in Battery template:", vehicleDetails);
+                console.log("New vehicleDetails received in Battery template:", vehicleDetails);
                 setVehicleDetails(vehicleDetails);
             },
             (error) => {
@@ -144,7 +166,7 @@ const RenderDetails = () => {
         }
     }, [appSettings]);
 
-    // Update settings when inputs
+    // Update settings when inputs change.
     useEffect(() => {
         if (appSettings && typeof appSettings === "object") {
             // Trigger saveSettings when specific state variables change
@@ -153,6 +175,19 @@ const RenderDetails = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isChargeManagementEnabled, sliderValueChanged]);
 
+    // Update settings every 5 minutes
+    useEffect(() => {
+        if (appSettings && typeof appSettings === "object") {
+            handleSaveSettings();
+        }
+
+        // Set up an interval to call updateSettings every 5 minutes
+        const intervalId = setInterval(updateSettings, 5 * 60 * 1000);
+
+        // Clean up the interval when the component is unmounted
+        return () => clearInterval(intervalId);
+    }, []); // Empty dependency array means this effect runs once on mount
+
     if (appSettings) {
         return appSettings && vehicleDetails && vehiclesData[0].state === "online" ? (
             <section className="p-4 subpixel-antialiased rounded-md shadow-lg">
@@ -160,7 +195,7 @@ const RenderDetails = () => {
                     <div className="flex-grow content-top">
                         <h1 className="mt-0 text-xl font-bold">
                             Charge Management:{" "}
-                            <span className="font-light">{isChargeManagementEnabled ? (isVehicleIsHome() ? "Enabled" : "Out of Home Area") : "Disabled"}</span>
+                            <span className="font-light">{isChargeManagementEnabled ? (isVehicleHome(appSettings) ? "Enabled" : "Out of Home Area") : "Disabled"}</span>
                         </h1>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">

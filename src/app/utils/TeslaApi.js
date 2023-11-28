@@ -140,7 +140,9 @@ class TeslaApi {
 
     async command(command, params = undefined, id = null) {
         const vid = (id == null)? this.vid : id;
-        return this.#apiCall(vid + "/command/" + command, "POST", params);
+        response = this.#apiCall(vid + "/command/" + command, "POST", params);
+        console.log(response);
+        return response;
     }
 
     async #oauthCall(params) {

@@ -36,7 +36,7 @@ async function initializeSettingsService() {
             take(1), // Take only the first emission to ensure the subscription is completed
             switchMap(async (vehiclesData) => {
                 if (vehiclesData) {
-                    console.log("Vehicles data received:", vehiclesData);
+                    // console.log("Vehicles data received:", vehiclesData);
                     return await fetchSettings(vehiclesData[0].id);
                 } else {
                     console.log("Vehicles data is empty or undefined");
@@ -50,6 +50,7 @@ async function initializeSettingsService() {
 }
 
 function updateSettings(newSettings) {
+    console.log("Updating settings:", newSettings);
     settingsSubject.next(newSettings);
     saveSettings(newSettings);
 }

@@ -13,6 +13,7 @@
     "@preline/overlay": "^2.0.0",
     "chart.js": "^4.4.0",
     "next": "14.0.1",
+    "node-cron": "^3.0.3",
     "preline": "^2.0.0",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
