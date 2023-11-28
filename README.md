@@ -4,7 +4,7 @@ As of November 27, 2023, Tesla has started disabling the core API endpoints cruc
 
 ![Screenshot of the application](https://github.com/jbelew/tesla-clean-grid-charging/blob/master/public/screenshot.png?raw=true)
 
-~~Welcome to the Tesla Clean Grid Charging App – a tool designed for Tesla owners with a passion for technology and environmental conservation. This app allows users to optimize their vehicle charging based on the availability of fossil-free energy on the grid, providing near real-time insights to enhance the sustainability of your Tesla ownership.~~
+~~Welcome to the Tesla Clean Grid Charging App – a tool designed for environmentally conscious Tesla owners with a passion for technology. This app allows users to optimize their vehicle charging based on the availability of fossil-free energy on the grid, providing near real-time insights to enhance the sustainability of your Tesla ownership.~~
 
 ## Features
 
@@ -12,6 +12,7 @@ As of November 27, 2023, Tesla has started disabling the core API endpoints cruc
 - Minimal user data stored locally, ensuring privacy.
 - Secure handling of API keys and secrets, never passed via the browser.
 - Built with Node, React, Tailwind, Charts.js, rxjs, and Next.js.
+- Designed to be run within a small Docker container on a Raspberry Pi or other low power home server options. 
 
 ## Motivation
 
