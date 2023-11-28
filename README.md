@@ -8,7 +8,6 @@
 
 As of November 27, 2023, Tesla has started disabling the core API endpoints crucial for the functionality of this app. The intended replacement is Tesla's new Fleet API; however, this is a paid service and currently beyond the scope of this project. Unfortunately, this means an end for this project (for now), but it was a great learning experience. 
 
- 
 ~~Welcome to the Tesla Clean Grid Charging App – a tool designed for Tesla owners with a passion for technology and environmental conservation. This app allows users to optimize their vehicle charging based on the availability of fossil-free energy on the grid, providing near real-time insights to enhance the sustainability of your Tesla ownership.~~
 
 ## Features
