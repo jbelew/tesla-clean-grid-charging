@@ -11,11 +11,11 @@ As of November 27, 2023, Tesla has started disabling the core API endpoints cruc
 - Integration and orchestration of Tesla and Electricity Maps APIs.
 - Minimal user data stored locally, ensuring privacy.
 - Secure handling of API keys and secrets, never passed via the browser.
-- Built with Node, React, Tailwind, and an rxjs messaging bus, leveraging the power of Next.js for a seamless experience.
+- Built with Node, React, Tailwind, Charts.js, rxjs, and Next.js.
 
 ## Motivation
 
-This project stems from a desire to blend technology and environmental conservation, contributing to a better future. Unlike other options such as Home Assistant, minimizing the vehicle wake state and unintended battery drain is a core design concept.
+This project stems from a desire to blend technology and environmental conservation, contributing to a better future. Unlike other options for managing vehicle state such as Home Assistant, minimizing vehicle wake and limiting unintended battery drain is a core design concept.
 
 ## Data Security
 
