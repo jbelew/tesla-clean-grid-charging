@@ -176,17 +176,17 @@ const RenderDetails = () => {
     }, [isChargeManagementEnabled, sliderValueChanged]);
 
     // Update settings every 5 minutes
-    useEffect(() => {
-        if (appSettings && typeof appSettings === "object") {
-            handleSaveSettings();
-        }
+    // useEffect(() => {
+    //     if (appSettings && typeof appSettings === "object") {
+    //         handleSaveSettings();
+    //     }
 
-        // Set up an interval to call updateSettings every 5 minutes
-        const intervalId = setInterval(updateSettings, 5 * 60 * 1000);
+    //     // Set up an interval to call updateSettings every 5 minutes
+    //     const intervalId = setInterval(updateSettings, 5 * 60 * 1000);
 
-        // Clean up the interval when the component is unmounted
-        return () => clearInterval(intervalId);
-    }, []); // Empty dependency array means this effect runs once on mount
+    //     // Clean up the interval when the component is unmounted
+    //     return () => clearInterval(intervalId);
+    // }, []); // Empty dependency array means this effect runs once on mount
 
     if (appSettings) {
         return appSettings && vehicleDetails && vehiclesData[0].state === "online" ? (
