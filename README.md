@@ -1,12 +1,8 @@
-## Tesla Clean Grid Charging
-
-![Screenshot of the application](https://github.com/jbelew/tesla-clean-grid-charging/blob/master/public/screenshot.png?raw=true)
-
-## Overview
-
-# Tesla Charging Optimization App
+# Tesla Clean Grid Charging
 
 As of November 27, 2023, Tesla has started disabling the core API endpoints crucial for the functionality of this app. The intended replacement is Tesla's new Fleet API; however, this is a paid service and currently beyond the scope of this project. Unfortunately, this means an end to this project (for now), but it was a great learning experience. 
+
+![Screenshot of the application](https://github.com/jbelew/tesla-clean-grid-charging/blob/master/public/screenshot.png?raw=true)
 
 ~~Welcome to the Tesla Clean Grid Charging App – a tool designed for Tesla owners with a passion for technology and environmental conservation. This app allows users to optimize their vehicle charging based on the availability of fossil-free energy on the grid, providing near real-time insights to enhance the sustainability of your Tesla ownership.~~
 
