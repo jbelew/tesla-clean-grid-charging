@@ -296,7 +296,7 @@ const RenderElectricityMaps = () => {
             <>
                 <section className="p-4 mt-4 subpixel-antialiased border rounded-md shadow-lg">
                     <h2 className="mb-4">
-                        Grid Status: <span className="font-light">{fossilFreePercentage > appSettings.grid_threshold ? "Clean!" : "Below Preferred Settings"}</span>
+                        Grid Status: <span className="font-light">{fossilFreePercentage > appSettings.grid_threshold ? "Exceeds Threshold!" : "Below Preferred Threshold"}</span>
                     </h2>
                     <hr />
                     <div className="flex gap-4 mt-4 h-72">
