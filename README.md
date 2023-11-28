@@ -18,7 +18,7 @@ As of November 27, 2023, Tesla has started disabling the core API endpoints cruc
 
 This project stems from a desire to blend technology and environmental conservation, contributing to a better future. 
 
-In first trying to orchestrate a solution like this in Home Assistant, I found the idle energy loss to be just too inefficient. Minimizing vehicle wake state and limiting unintended battery drain is a core design concept of this App.
+In first trying to orchestrate a solution like this in Home Assistant, I found that the idle battery loss was just too great. Minimizing vehicle wake state and limiting unintended battery drain was a core concept in creating this App. Unlike other options that wake the car on a regular basis to to grab data, this app maintains state locally, only waking the vehicle when absolutely neccessary.  
 
 ## Data Security
 
