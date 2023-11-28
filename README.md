@@ -1,12 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Tesla Clean Grid Charging
 
 ![Screenshot of the application](https://github.com/jbelew/tesla-clean-grid-charging/blob/master/public/screenshot.png?raw=true)
 
 ## Overview
 
-Welcome to the Tesla Clean Grid Charging App – a tool designed for Tesla owners with a passion for technology and environmental conservation. This app allows users to optimize their vehicle charging based on the availability of fossil-free energy on the grid, providing near real-time insights to enhance the sustainability of your Tesla ownership.
+Unfortunately, as of November 27, 2023, Tesla has begun disabling the core API endpoints this app was relying on. The replacement is Tesla's new Fleet API, but that a paid service and beyond the scope of doing what I inteneded to do with this project.   
+
+~~ Welcome to the Tesla Clean Grid Charging App – a tool designed for Tesla owners with a passion for technology and environmental conservation. This app allows users to optimize their vehicle charging based on the availability of fossil-free energy on the grid, providing near real-time insights to enhance the sustainability of your Tesla ownership. ~~
 
 ## Features
 
