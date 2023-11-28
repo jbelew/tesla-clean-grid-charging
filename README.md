@@ -15,19 +15,15 @@ As of November 27, 2023, Tesla has started disabling the core API endpoints cruc
 
 ## Motivation
 
-This project stems from a desire to blend technology and environmental conservation, contributing to a better future. By minimizing the vehicle wake state and battery drain, we aim to make a positive impact on both energy efficiency and overall sustainability.
-
-## Differentiation
-
-Unlike existing solutions, our app goes beyond by offering the ability to save custom Home Assistant automations specifically tailored to minimize vehicle wake states and battery drain. No more compromise between automation and energy efficiency.
+This project stems from a desire to blend technology and environmental conservation, contributing to a better future. Unlike other options such as Home Assistant, minimizing the vehicle wake state and unintended battery drain is a core design concept.
 
 ## Data Security
 
-Your privacy is paramount. Minimal user data is stored locally and never shared externally. API keys and secrets are transmitted only via the server, never exposed through the browser.
+Minimal user data is stored locally and never shared externally. API keys and secrets are transmitted only via the server, never exposed through the browser.
 
 ## Future Plans
 
-The roadmap includes exploring the migration to the Tesla Fleet API for enhanced functionality. However, it's important to note that this transition may involve considerations related to accessibility, as the Tesla Fleet API is behind a paywall.
+The roadmap includes exploring the migration to the Tesla Fleet API for enhanced functionality. However, it's important to note that this transition may involve considerations related to accessibility for the average user, as the Tesla Fleet API is behind a paywall.
 
 ## Contribution
 
