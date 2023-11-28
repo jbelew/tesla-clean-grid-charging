@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 A proof of concept application to optimize charging your Tesla based using fossil free energy source. It was intended to bit much more than a PoC, but as of November 27 2023, Tesla pulled the plug on most of the API endpoints this application was based on. 
 
-First, run the development server:
+If you want to poke around, it's a typical Next.js app ...
 
 ```bash
 npm run dev
